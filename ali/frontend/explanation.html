@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Explanation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        section {
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: auto;
+            text-align: left;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 40px;
+        }
+        p {
+            line-height: 1.6;
+        }
+        button {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .subtitle {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+        #qa-section {
+            display: none;
+        }
+        #qa-section h3 {
+            margin-top: 30px;
+        }
+        #qa-section ul {
+            list-style-type: disc;
+            padding-left: 50px;
+        }
+        #qa-section li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>Real-Time Multi-Agent Framework for Detecting Cascading Failures in ML Pipelines</h1>
+    <p class="subtitle">
+        A real-time system that monitors the ML pipeline at every stage and provides early alerts for cascading failures.
+    </p>
+</section>
+
+<section>
+    <h2>Project Overview</h2>
+    <p>
+        Modern machine learning pipelines are multi-stage systems where outputs from one stage become inputs to the next. 
+        Small issues like data quality problems, model performance drops, or service delays can propagate across stages 
+        causing large-scale failures. Traditional monitoring tools often ignore these interactions and operate offline. 
+        This project implements a <strong>multi-agent framework</strong> that monitors each stage in real time, 
+        estimates system-level failure risk, and triggers early warnings.
+    </p>
+</section>
+
+<section>
+    <h2>Objectives</h2>
+    <ul>
+        <li>Monitor Data, Model, and API stages in real time</li>
+        <li>Detect cascading failures before large-scale system impact</li>
+        <li>Visualize propagation risk across the pipeline</li>
+        <li>Provide early alerts and proactive insights</li>
+        <li>Allow scenario injections to test system robustness</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Visualization Mapping to Objectives</h2>
+    <p>
+        The dashboard visualizations are designed to clearly show the current system health and propagation of failures:
+    </p>
+    <ul>
+        <li><strong>Data Risk Graph:</strong> Displays upstream anomalies and drift in real time.</li>
+        <li><strong>Model Risk Graph:</strong> Shows amplification of risk from upstream data issues.</li>
+        <li><strong>API Risk Graph:</strong> Shows downstream service impact from model degradation.</li>
+        <li><strong>Cascade Risk Graph:</strong> Aggregates multi-agent signals to indicate systemic risk.</li>
+        <li><strong>Pipeline Animation:</strong> Nodes pulse and arrows glow dynamically, visually demonstrating risk propagation.</li>
+        <li><strong>Risk Gauge:</strong> Shows numeric cascade risk in real time with color-coded safety levels.</li>
+        <li><strong>Scenario Panel:</strong> Allows injection of drift, model collapse, or API latency, showing how the system reacts.</li>
+        <li><strong>Live Log Panel:</strong> Displays agent reasoning and explanations for observed risk.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>How Visualizations Relate to Project Goals</h2>
+    <p>
+        Each component on the dashboard corresponds to an objective:
+    </p>
+    <ul>
+        <li>Graphs demonstrate the <strong>monitoring of each stage</strong>.</li>
+        <li>Animations demonstrate <strong>propagation effects</strong> in real time.</li>
+        <li>Forecasted risk lines show <strong>proactive prediction</strong> capabilities.</li>
+        <li>Alerts and gauge provide <strong>immediate actionable insights</strong>.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Scenario Explanation</h2>
+    <p>
+        Scenario injection lets you simulate:
+    </p>
+    <ul>
+        <li><strong>Data Drift:</strong> Mimics upstream data anomalies.</li>
+        <li><strong>Model Collapse:</strong> Simulates model underperformance due to bad data.</li>
+        <li><strong>API Latency:</strong> Tests downstream system reliability under stress.</li>
+    </ul>
+    <p>
+        All scenario changes dynamically update the graphs, pipeline animations, and risk gauge, demonstrating the 
+        real-time response of the multi-agent system.
+    </p>
+</section>
+
+<button onclick="window.location.href='index.html'">⬅ Back to Dashboard</button>
+<button id="toggleQA">Show / Hide Critical Questions</button>
+
+<section id="qa-section">
+    <h2>Critical Questions & Answers</h2>
+    
+    <!-- Generate all 35 Q&A -->
+    <h3>Q1: What is the main purpose of this project?</h3>
+    <p>A: To detect cascading failures across multi-stage ML pipelines in real time using a multi-agent system.</p>
+
+    <h3>Q2: What agents are used in the system?</h3>
+    <p>A: Data Agent, Model Agent, API Agent, Propagation Risk Agent, and Alert Agent.</p>
+
+    <h3>Q3: How does the Data Agent detect anomalies?</h3>
+    <p>A: It monitors statistical deviations from baseline, including Z-score, KL divergence, and scenario injections.</p>
+
+    <h3>Q4: How is model risk computed?</h3>
+    <p>A: Model risk is derived from amplified data risk and evaluated using historical cascade memory and propagation factors.</p>
+
+    <h3>Q5: How is API risk computed?</h3>
+    <p>A: API risk is computed based on model risk amplification, latency spikes, and downstream impact simulation.</p>
+
+    <h3>Q6: What is cascade risk?</h3>
+    <p>A: Aggregate system-level risk combining data, model, and API risks using weighted factors and historical memory.</p>
+
+    <h3>Q7: What visualization represents cascade risk?</h3>
+    <p>A: The red curve in the line chart and the risk gauge indicate the systemic cascade intensity.</p>
+
+    <h3>Q8: How are scenario injections applied?</h3>
+    <p>A: Clicking buttons triggers drift, model collapse, or API latency, dynamically changing risk metrics and visualizations.</p>
+
+    <h3>Q9: What is Z-score used for?</h3>
+    <p>A: To detect statistical anomalies relative to baseline data distribution.</p>
+
+    <h3>Q10: What is KL divergence used for?</h3>
+    <p>A: To measure distributional difference between current and baseline data for drift detection.</p>
+
+    <h3>Q11: How does forecasted cascade risk work?</h3>
+    <p>A: Uses historical cascade trends, slope estimation, and anomaly amplification to predict near-future risk.</p>
+
+    <h3>Q12: What happens if a critical cascade occurs?</h3>
+    <p>A: Alert panel turns red, and speech synthesis announces a critical cascade for immediate action.</p>
+
+    <h3>Q13: How does auto-recovery work?</h3>
+    <p>A: If drift timers expire, mean and standard deviation gradually return toward baseline values.</p>
+
+    <h3>Q14: How is dynamic threshold determined?</h3>
+    <p>A: Based on baseline mean plus a factor of baseline standard deviation to adaptively detect high-risk scenarios.</p>
+
+    <h3>Q15: How is safety margin calculated?</h3>
+    <p>A: Safety margin = dynamic threshold - cascade risk; determines alert levels.</p>
+
+    <h3>Q16: What are the alert levels?</h3>
+    <p>A: SAFE, WARNING, CRITICAL, and CASCADE FAILURE depending on safety margin.</p>
+
+    <h3>Q17: How are historical trends stored?</h3>
+    <p>A: Cascade history array stores previous risk values for prediction and anomaly detection.</p>
+
+    <h3>Q18: How does live log panel help?</h3>
+    <p>A: Displays agent reasoning, scenario influence, and statistical insights for transparency.</p>
+
+    <h3>Q19: How does pipeline animation indicate risk?</h3>
+    <p>A: Node glow intensity and arrow color correspond to risk magnitudes in real time.</p>
+
+    <h3>Q20: What type of data is used?</h3>
+    <p>A: Simulated numeric data with baseline Gaussian distributions and optional injected drifts for testing robustness.</p>
+
+    <h3>Q21: Why does the graph move continuously?</h3>
+    <p>A: Because new metrics are fetched every 2 seconds, and cascading risk updates dynamically to simulate real-time monitoring.</p>
+
+    <h3>Q22: How do forecasts improve system monitoring?</h3>
+    <p>A: By showing potential future risks, enabling proactive intervention before critical cascades occur.</p>
+
+    <h3>Q23: What happens when multiple scenarios are injected simultaneously?</h3>
+    <p>A: Risks combine additively but capped at 100; visualizations reflect cumulative system stress.</p>
+
+    <h3>Q24: How is real-time data fetched?</h3>
+    <p>A: Frontend fetches from FastAPI /metrics endpoint every 2 seconds using fetch API.</p>
+
+    <h3>Q25: How are anomalies explained mathematically?</h3>
+    <p>A: Using Z-score, mean/std deviation, and KL divergence calculations shown in the live log panel.</p>
+
+    <h3>Q26: How is model amplification determined?</h3>
+    <p>A: Model risk = data risk × 1.2; API risk = model risk × 1.15; cascade risk is weighted aggregation.</p>
+
+    <h3>Q27: How does auto-recovery affect risk graphs?</h3>
+    <p>A: Gradually reduces artificially inflated risks toward baseline; green zone returns over time.</p>
+
+    <h3>Q28: How are scenario effects visualized?</h3>
+    <p>A: Dashboard updates graphs, node pulses, arrows, and logs to show real-time impact of injected scenarios.</p>
+
+    <h3>Q29: How is forecasted cascade risk plotted?</h3>
+    <p>A: Green dashed line in chart shows predicted risk; dynamically updated alongside actual metrics.</p>
+
+    <h3>Q30: What uniqueness does this project have?</h3>
+    <p>A: Real-time multi-agent monitoring of cascading failures with explainable reasoning, forecasting, and scenario simulation.</p>
+
+    <h3>Q31: How are drift types handled?</h3>
+    <p>A: Mean shift, variance explosion, sudden shock, and gradual drift; each modifies the simulated data distribution differently.</p>
+
+    <h3>Q32: How is the forecast anomaly detected?</h3>
+    <p>A: Using Z-score > 2 compared to historical cascade history; amplifies predicted cascade risk.</p>
+
+    <h3>Q33: How are frontend animations synchronized with metrics?</h3>
+    <p>A: JavaScript updates CSS properties of nodes and arrows each update cycle to reflect current risk values.</p>
+
+    <h3>Q34: How does this project demonstrate proactive monitoring?</h3>
+    <p>A: Shows live and predicted risks, triggers alerts before thresholds are exceeded, allowing early interventions.</p>
+
+    <h3>Q35: What are potential edge cases and how are they handled?</h3>
+    <p>A: Extreme drifts, multiple simultaneous scenarios, and sudden shocks are auto-corrected gradually; risk values capped at 100; alert logic handles safety margin dynamically.</p>
+</section>
+
+<script>
+document.getElementById("toggleQA").addEventListener("click", () => {
+    const qaSection = document.getElementById("qa-section");
+    qaSection.style.display = qaSection.style.display === "none" ? "block" : "none";
+});
+</script>
+
+</body>
+</html>

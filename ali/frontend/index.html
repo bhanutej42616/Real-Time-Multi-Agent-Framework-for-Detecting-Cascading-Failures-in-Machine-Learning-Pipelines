@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ML Cascade Monitoring System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<section class="hero" id="hero">
+    <h1>Real-Time Multi-Agent Cascade Monitoring</h1>
+    <button onclick="window.location.href='explanation.html'">📘 Project Explanation</button>
+    <p class="subtitle">
+        Detecting Systemic Failures Across Data, Model and API Layers
+    </p>
+    <button id="presentationToggle">🎤 Start AI Presentation Mode</button>
+</section>
+
+<section class="pipeline-section" id="architecture">
+    <h2>Pipeline Architecture</h2>
+
+    <div class="pipeline">
+        <div class="node" id="dataNode">DATA</div>
+        <div class="arrow" id="arrow1"></div>
+        <div class="node" id="modelNode">MODEL</div>
+        <div class="arrow" id="arrow2"></div>
+        <div class="node" id="apiNode">API</div>
+    </div>
+</section>
+
+<section class="dashboard">
+    <div class="chart-container">
+        <canvas id="riskChart"></canvas>
+    </div>
+    <section class="control-section">
+    <h2>Scenario Simulation</h2>
+
+    <button onclick="injectScenario('data_drift')">Inject Data Drift</button>
+    <button onclick="injectScenario('model_collapse')">Inject Model Collapse</button>
+    <button onclick="injectScenario('api_latency')">Inject API Latency Spike</button>
+    <button onclick="clearScenario()">Reset System</button>
+
+    <button onclick="exportReport()">Export Research Report</button>
+</section>
+
+    <div class="gauge-container">
+        <div class="gauge">
+            <div class="gauge-fill" id="gaugeFill"></div>
+            <div class="gauge-value" id="cascadeValue">0</div>
+        </div>
+        <div id="alertPanel" class="alert-panel">Safe</div>
+    </div>
+</section>
+
+<section class="logs-section">
+    <h2>Live Agent Reasoning</h2>
+    <div id="logs"></div>
+</section>
+
+<section class="unique-section">
+    <h2>Why This Is Unique</h2>
+    <p>
+        Unlike traditional monitoring systems that detect isolated failures,
+        this framework models propagation risk across ML stages using
+        time-weighted cascade memory and multi-agent reasoning.
+    </p>
+</section>
+
+<script src="animations.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
